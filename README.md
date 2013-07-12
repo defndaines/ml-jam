@@ -8,18 +8,32 @@ In particular, beginning to experiment with hiphip (array)!
   https://github.com/prismatic/hiphip
 
 Initial (by-hand) performance comparison:
-  Average time to validate a single digit against 5000 training set values.
-    2300 msecs
+
+  Average time to validate a single digit against 5000 training set values:
+    2300 msecs.
+
   Average time to validate a single digit using hip hip:
-    181 msecs
+    181 msecs.
+
+I've also observed that map is slightly more performant than a for comprehension.
 
 ## Usage
 
 To test a single digit:
- (nearest-neighbor-map (first validation-set) training-set)
+
+  (nearest-neighbor-map (first validation-set) training-set)
+
+  or
+
+  (nearest-neighbor (first validation-set) training-set)
 
 Using hiphip:
- (hippest-neighbor-map (first hip-validation) hip-train)
+
+  (hippest-neighbor-map (first hip-validation) hip-train)
+ 
+  or
+ 
+  (hippest-neighbor (first hip-validation) hip-train)
 
 ## License
 
