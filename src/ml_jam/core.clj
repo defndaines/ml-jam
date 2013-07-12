@@ -80,8 +80,17 @@
 
 (defn hippest-neighbor
   [candidate known]
-  (let [[expect & image] candidate]
+  (let [[expect image] candidate]
     (first
       (sort-by second
-               (for [[label & values] known]
+               (for [[label values] known]
                  [label (hip-distance image values)])))))
+
+(defn hippest-neighbor-map
+  [candidate known]
+  (let [[expect image] candidate]
+    (first
+      (sort-by second
+               (map
+                 #(list (first %) (hip-distance image (second %)))
+                 known)))))
