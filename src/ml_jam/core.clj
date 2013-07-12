@@ -20,10 +20,10 @@
   (map line->seq (get-lines path)))
 
 ; 5000 known values.
-(def training-set (read-data "digitssample.csv"))
+(def training-set (read-data "resources/digitssample.csv"))
 
 ; 500 examples to test against.
-(def validation-set (read-data "digitscheck.csv"))
+(def validation-set (read-data "resources/digitscheck.csv"))
 
 (defn sqr-diff
   "Find the difference between numbers and square it."
@@ -69,9 +69,9 @@
   [path]
   (map hip-data (get-lines path)))
 
-(def hip-train (read-data-into-array "digitssample.csv"))
+(def hip-train (read-data-into-array "resources/digitssample.csv"))
 
-(def hip-validation (read-data-into-array "digitscheck.csv"))
+(def hip-validation (read-data-into-array "resources/digitscheck.csv"))
 
 (defn hip-distance
   [left right]
