@@ -94,3 +94,7 @@
                (map
                  #(list (first %) (hip-distance image (second %)))
                  known)))))
+
+(defn validate-set
+  [to-validate training-data]
+  (map #(hippest-neighbor-map % training-data) to-validate))
