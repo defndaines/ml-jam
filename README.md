@@ -3,19 +3,17 @@
 Lambda Jam - Day 2 Jam
 Machine Learning exercise attempting to identify numbers from a black-and-white image.
 
-Project includes a few implementation to test performance.
-In particular, beginning to experiment with hiphip (array)!
-  https://github.com/prismatic/hiphip
+Project includes a few implementation to test performance. In particular, beginning to experiment with hiphip (array)! https://github.com/prismatic/hiphip
 
-Initial (by-hand) performance comparison:
+Criterium performance comparison (nearly 15x speed-up on my machine):
 
-  Average time to validate a single digit against 5000 training set values:
-    2300 msecs.
+  Average time to validate a single digit against 5000 training set values: 2781 ms.
 
-  Average time to validate a single digit using hip hip:
-    181 msecs.
+  Average time to validate a single digit using hiphip: 185 ms.
 
-I've also observed that map is slightly more performant than a for comprehension.
+I've also observed that map is slightly more performant than a for comprehension (185 vs. 196 ms).
+
+Run serially (without pmap), it took about 1.5 minutes to run the entire validation set. With pmap, about 50 seconds (my laptop has only two cores).
 
 ## Usage
 
