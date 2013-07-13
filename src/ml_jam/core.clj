@@ -97,4 +97,17 @@
 
 (defn validate-set
   [to-validate training-data]
-  (map #(hippest-neighbor-map % training-data) to-validate))
+  (doall
+    (pmap #(hippest-neighbor-map % training-data) to-validate)))
+
+(defn pass?
+  [expected results]
+  (= expected (first results)))
+
+(defn check-accuracy
+  [to-validate training-data]
+  (let [passed (atom 0)
+        checked (count to-validate)]
+    (doall
+      (pmap #(if (pass? (first %) (hippest-neighbor-map % training-data)) (swap! passed inc)) to-validate))
+    (/ @passed checked)))
