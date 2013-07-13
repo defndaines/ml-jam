@@ -3,7 +3,7 @@
 Lambda Jam - Day 2 Jam
 Machine Learning exercise attempting to identify numbers from a black-and-white image.
 
-Project includes a few implementation to test performance. In particular, beginning to experiment with hiphip (array)! https://github.com/prismatic/hiphip
+Project includes a few implementations to test performance. In particular, beginning to experiment with hiphip (array)! https://github.com/prismatic/hiphip
 
 Criterium performance comparison (nearly 15x speed-up on my machine):
 
@@ -19,19 +19,19 @@ Run serially (without pmap), it took about 1.5 minutes to run the entire validat
 
 To test a single digit:
 
-  (nearest-neighbor-map (first validation-set) training-set)
+    (nearest-neighbor-map (first validation-set) training-set)
 
   or
 
-  (nearest-neighbor (first validation-set) training-set)
+    (nearest-neighbor (first validation-set) training-set)
 
 Using hiphip:
 
-  (hippest-neighbor-map (first hip-validation) hip-train)
+    (hippest-neighbor-map (first hip-validation) hip-train)
  
   or
  
-  (hippest-neighbor (first hip-validation) hip-train)
+    (hippest-neighbor (first hip-validation) hip-train)
 
 ## License
 
